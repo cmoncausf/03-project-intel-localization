@@ -9,19 +9,48 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet" />
   <!-- Add Bootstrap CSS for carousel styling -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Tech-savvy animated SVG background */
+    body {
+      background: linear-gradient(135deg, #0071c5 0%, #00a9e0 100%);
+      /* Remove SVG circuit pattern overlay for better visibility */
+      /* background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100" height="100" fill="none"/><circle cx="50" cy="50" r="40" stroke="%2300a9e0" stroke-width="2" fill="none"/><rect x="45" y="10" width="10" height="20" fill="%230071c5"/><rect x="45" y="70" width="10" height="20" fill="%230071c5"/><rect x="10" y="45" width="20" height="10" fill="%230071c5"/><rect x="70" y="45" width="20" height="10" fill="%230071c5"/></svg>'); */
+      background-repeat: repeat;
+      background-size: 120px 120px;
+    }
+    /* Glowing effect for main heading */
+    header h1 {
+      text-shadow: 0 0 12px #00a9e0, 0 0 24px #fff;
+    }
+    /* Add a glowing effect to microprocessor section title */
+    .microprocessor-specs h2 {
+      text-shadow: 0 0 8px #00a9e0, 0 0 16px #fff;
+    }
+    /* Add a slight neon border to cards */
+    .info-card, .spec-card {
+      border: 2px solid #00a9e0;
+      box-shadow: 0 0 12px #00a9e033;
+    }
+    /* Animate Learn More buttons with a pulse */
+    .learn-more-btn {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 #00a9e0; }
+      70% { box-shadow: 0 0 10px 6px #00a9e044; }
+      100% { box-shadow: 0 0 0 0 #00a9e0; }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header / Hero Section -->
+  <!-- SVG Tech Icon for main heading -->
   <header>
     <div>
-      <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
       </h1>
-
       <!-- Subheading / Description -->
       <p>
         Explore Intel's journey through time, discovering how our commitment
@@ -155,6 +184,40 @@
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
 
+  <!-- New Information Section: RISE Strategy, Carbon Emissions Plan, Intel Sustainability -->
+  <section class="info-cards-section">
+    <h2>Intel Sustainability Initiatives</h2>
+    <div class="info-cards-row">
+      <!-- RISE Strategy Card (left) -->
+      <div class="info-card">
+        <h3>RISE Strategy</h3>
+        <p>
+          RISE stands for Responsible, Inclusive, Sustainable, and Enabling. Intel's RISE Strategy guides the company's efforts to create a positive impact on society and the environment by setting ambitious goals for 2030 and beyond.
+        </p>
+        <!-- Learn More button -->
+        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
+      </div>
+      <!-- Carbon Emissions Plan Card (center) -->
+      <div class="info-card">
+        <h3>Carbon Emissions Plan</h3>
+        <p>
+          Intel is committed to reducing its carbon footprint by investing in renewable energy, improving energy efficiency, and aiming for net-zero greenhouse gas emissions across its global operations by 2040.
+        </p>
+        <!-- Learn More button -->
+        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
+      </div>
+      <!-- Intel Sustainability Card (right) -->
+      <div class="info-card">
+        <h3>Intel Sustainability</h3>
+        <p>
+          Intel saves water and energy by using smart water recycling systems, heat recovery, and efficient equipment. The company also works hard to protect water sources by supporting water restoration projects and setting strong water goals. Intel reuses water for cleaning and cooling, and recycles heat from manufacturing to use less natural gas. These steps help Intel use less fresh water and energy, making a positive impact on the environment.
+        </p>
+        <!-- Learn More button -->
+        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Microprocessor Specifications Section with Carousel -->
   <section class="microprocessor-specs">
     <h2>Microprocessor Specifications</h2>
@@ -219,40 +282,6 @@
     </div>
   </section>
 
-  <!-- New Information Section: RISE Strategy, Carbon Emissions Plan, Intel Sustainability -->
-  <section class="info-cards-section">
-    <h2>Intel Sustainability Initiatives</h2>
-    <div class="info-cards-row">
-      <!-- RISE Strategy Card (left) -->
-      <div class="info-card">
-        <h3>RISE Strategy</h3>
-        <p>
-          RISE stands for Responsible, Inclusive, Sustainable, and Enabling. Intel's RISE Strategy guides the company's efforts to create a positive impact on society and the environment by setting ambitious goals for 2030 and beyond.
-        </p>
-        <!-- Learn More button -->
-        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
-      </div>
-      <!-- Carbon Emissions Plan Card (center) -->
-      <div class="info-card">
-        <h3>Carbon Emissions Plan</h3>
-        <p>
-          Intel is committed to reducing its carbon footprint by investing in renewable energy, improving energy efficiency, and aiming for net-zero greenhouse gas emissions across its global operations by 2040.
-        </p>
-        <!-- Learn More button -->
-        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
-      </div>
-      <!-- Intel Sustainability Card (right) -->
-      <div class="info-card">
-        <h3>Intel Sustainability</h3>
-        <p>
-          Intel's sustainability initiatives focus on climate action, water stewardship, and waste reduction. The company collaborates with partners and stakeholders to drive progress toward a more sustainable future for technology and the planet.
-        </p>
-        <!-- Learn More button -->
-        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Subscription form starts here -->
   <div class="subscription-container">
     <!-- Title for the subscription form -->
@@ -288,12 +317,25 @@
     <small>&copy; 2024 Your Website. All rights reserved.</small>
   </footer>
 
+  <!-- Simple bottom navigation links for important pages -->
+  <nav class="bottom-links">
+    <ul>
+      <!-- Privacy Policy link -->
+      <li><a href="#" class="bottom-link">Privacy Policy</a></li>
+      <!-- Terms of Use link -->
+      <li><a href="#" class="bottom-link">Terms of Use</a></li>
+      <!-- Frequently Asked Questions link -->
+      <li><a href="#" class="bottom-link">Frequently Asked Questions</a></li>
+      <!-- Contact Us link -->
+      <li><a href="#" class="bottom-link">Contact Us</a></li>
+    </ul>
+  </nav>
   <!-- Script to detect language and apply RTL mode -->
   <script>
     // List of RTL languages
     var rtlLanguages = ['ar', 'he', 'fa', 'ur'];
 
-    // Function to check and set RTL mode
+    // This function checks the language and sets the page direction
     function updateDirection() {
       // Get the language from the <html> tag
       var lang = document.documentElement.lang;
@@ -319,6 +361,11 @@
     });
 
     observer.observe(document.documentElement, { attributes: true });
+  </script>
+  <!-- Add Bootstrap JS for carousel functionality just before </body> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
   </script>
   <!-- Add Bootstrap JS for carousel functionality just before </body> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -16,8 +16,8 @@ header img[src="img/intel-header-logo.svg"] {
 
 /* Set a simple Intel-branded background for the whole page */
 body {
-  /* Intel blue gradient background */
-  background: linear-gradient(135deg, #0071c5 0%, #00a9e0 100%);
+  /* Lighter Intel blue gradient background for better logo visibility */
+  background: linear-gradient(135deg, #e0f0fb 0%, #b3e0ff 100%);
   /* Add some padding so content doesn't touch the edges */
   padding: 0;
   margin: 0;
@@ -198,6 +198,16 @@ section {
 .carousel-control-next-icon {
   background-color: #0071c5; /* Intel blue */
   border-radius: 50%;
+}
+
+/* Center the content inside each carousel slide */
+/* This helps keep the microprocessor info centered when you click arrows */
+.carousel-item {
+  display: flex;              /* Use flexbox for easy centering */
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically */
+  text-align: center;         /* Center text inside the card */
+  min-height: 320px;          /* Make sure all slides are the same height */
 }
 
 /* Center the microprocessor carousel and add spacing */
@@ -504,6 +514,50 @@ section > div {
 /* Add spacing above Learn More buttons in info cards */
 .learn-more-btn {
   margin-top: 18px;
+}
+
+/* Style for the bottom navigation links at the bottom of the page */
+.bottom-links {
+  width: 100%;
+  background: #e0f0fb;           /* Light blue background for separation */
+  border-top: 2px solid #b3e0ff; /* Soft border at the top */
+  padding: 18px 0 14px 0;        /* Space above and below */
+  text-align: center;             /* Center the links */
+}
+
+/* Remove default list styling and center items */
+.bottom-links ul {
+  list-style: none;              /* No bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;                 /* Show links side by side */
+  justify-content: center;       /* Center horizontally */
+  gap: 32px;                     /* Space between links */
+}
+
+/* Style for each link */
+.bottom-link {
+  color: #003366;                /* Dark blue for visibility */
+  text-decoration: none;         /* No underline */
+  font-size: 1.08em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+/* Add a simple hover effect */
+.bottom-link:hover {
+  background: #b3e0ff;           /* Slightly darker blue on hover */
+}
+
+/* Responsive: stack bottom links vertically on small screens */
+@media (max-width: 700px) {
+  .bottom-links ul {
+    flex-direction: column;      /* Stack links vertically */
+    gap: 12px;
+  }
 }
 
 /* Responsive: stack cards vertically only on small screens */
