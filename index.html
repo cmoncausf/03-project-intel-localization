@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Add Google Fonts for a more engaging title -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet" />
+  <!-- Add Bootstrap CSS for carousel styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -152,5 +154,173 @@
     </div>
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Microprocessor Specifications Section with Carousel -->
+  <section class="microprocessor-specs">
+    <h2>Microprocessor Specifications</h2>
+    <!-- Short description for context -->
+    <p class="micro-desc">
+      Discover key facts about Intel's most influential microprocessors. Use the arrows to browse through each one!
+    </p>
+    <!-- Centered carousel wrapper -->
+    <div class="carousel-center">
+      <div id="microprocessor-carousel" class="carousel slide shadow rounded" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- First slide: 4004 Microprocessor -->
+          <div class="carousel-item active">
+            <div class="spec-card">
+              <h3>4004 Microprocessor</h3>
+              <img src="img/2.jpg" alt="4004 Microprocessor" class="spec-img" />
+              <ul>
+                <li>Year: 1971</li>
+                <li>4-bit CPU</li>
+                <li>2300 transistors</li>
+                <li>Clock speed: 740 kHz</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Second slide: 8086 Microprocessor -->
+          <div class="carousel-item">
+            <div class="spec-card">
+              <h3>8086 Microprocessor</h3>
+              <img src="img/3.jpg" alt="8086 Microprocessor" class="spec-img" />
+              <ul>
+                <li>Year: 1978</li>
+                <li>16-bit CPU</li>
+                <li>29,000 transistors</li>
+                <li>Clock speed: 5–10 MHz</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Third slide: 386 Microprocessor -->
+          <div class="carousel-item">
+            <div class="spec-card">
+              <h3>386 Microprocessor</h3>
+              <img src="img/i386.jpg" alt="386 Microprocessor" class="spec-img" />
+              <ul>
+                <li>Year: 1985</li>
+                <li>32-bit CPU</li>
+                <li>275,000 transistors</li>
+                <li>Clock speed: 12–40 MHz</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel navigation buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#microprocessor-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#microprocessor-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Information Section: RISE Strategy, Carbon Emissions Plan, Intel Sustainability -->
+  <section class="info-cards-section">
+    <h2>Intel Sustainability Initiatives</h2>
+    <div class="info-cards-row">
+      <!-- RISE Strategy Card (left) -->
+      <div class="info-card">
+        <h3>RISE Strategy</h3>
+        <p>
+          RISE stands for Responsible, Inclusive, Sustainable, and Enabling. Intel's RISE Strategy guides the company's efforts to create a positive impact on society and the environment by setting ambitious goals for 2030 and beyond.
+        </p>
+        <!-- Learn More button -->
+        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
+      </div>
+      <!-- Carbon Emissions Plan Card (center) -->
+      <div class="info-card">
+        <h3>Carbon Emissions Plan</h3>
+        <p>
+          Intel is committed to reducing its carbon footprint by investing in renewable energy, improving energy efficiency, and aiming for net-zero greenhouse gas emissions across its global operations by 2040.
+        </p>
+        <!-- Learn More button -->
+        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
+      </div>
+      <!-- Intel Sustainability Card (right) -->
+      <div class="info-card">
+        <h3>Intel Sustainability</h3>
+        <p>
+          Intel's sustainability initiatives focus on climate action, water stewardship, and waste reduction. The company collaborates with partners and stakeholders to drive progress toward a more sustainable future for technology and the planet.
+        </p>
+        <!-- Learn More button -->
+        <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription form starts here -->
+  <div class="subscription-container">
+    <!-- Title for the subscription form -->
+    <h4>Sign-up to our newsletter</h4>
+    <!-- Simple form for newsletter sign-up -->
+    <form>
+      <!-- First Name input field -->
+      <label for="first-name" class="form-label">First Name:</label>
+      <input type="text" id="first-name" class="form-control" placeholder="Enter your first name" />
+
+      <!-- Last Name input field -->
+      <label for="last-name" class="form-label">Last Name:</label>
+      <input type="text" id="last-name" class="form-control" placeholder="Enter your last name" />
+
+      <!-- Email input field -->
+      <label for="email" class="form-label">Email address:</label>
+      <input type="email" id="email" class="form-control" placeholder="Enter your email" />
+
+      <!-- Terms and conditions checkbox -->
+      <div class="form-checkbox">
+        <input type="checkbox" id="terms" />
+        <label for="terms">I accept the terms and conditions</label>
+      </div>
+
+      <!-- Subscribe button -->
+      <button type="submit" class="btn boost-button">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- Footer starts here -->
+  <footer class="footer">
+    <!-- Simple footer text -->
+    <small>&copy; 2024 Your Website. All rights reserved.</small>
+  </footer>
+
+  <!-- Script to detect language and apply RTL mode -->
+  <script>
+    // List of RTL languages
+    var rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+
+    // Function to check and set RTL mode
+    function updateDirection() {
+      // Get the language from the <html> tag
+      var lang = document.documentElement.lang;
+      // If the language is RTL, set dir="rtl", else set dir="ltr"
+      if (rtlLanguages.includes(lang)) {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    // Run on page load
+    updateDirection();
+
+    // Optional: Listen for changes to the lang attribute
+    // This allows dynamic changes if you update document.documentElement.lang
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'lang') {
+          updateDirection();
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+  </script>
+  <!-- Add Bootstrap JS for carousel functionality just before </body> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

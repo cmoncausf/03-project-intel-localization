@@ -5,6 +5,15 @@ img[src="img/intel-header-logo.svg"] {
   height: auto; /* Keep the aspect ratio */
 }
 
+/* Center the Intel logo at the top of the page */
+header img[src="img/intel-header-logo.svg"] {
+  display: block;         /* Makes the image a block element */
+  margin-left: auto;      /* Auto margin left */
+  margin-right: auto;     /* Auto margin right */
+  margin-top: 24px;       /* Add some space above the logo */
+  margin-bottom: 0;       /* No extra space below */
+}
+
 /* Set a simple Intel-branded background for the whole page */
 body {
   /* Intel blue gradient background */
@@ -75,15 +84,13 @@ body {
 }
 
 /* Remove static display for tooltip in card hover */
-section > div:hover .timeline-tooltip {
-  /* No effect needed */
-}
+
 
 /* Prevent card from growing too tall, but allow all info to be visible */
 section > div {
-  background: #f4faff; /* Light Intel blue background for cards */
-  border-radius: 12px; /* Slightly more rounded corners */
-  box-shadow: 0 2px 12px rgba(0,113,197,0.08); /* Soft Intel blue shadow */
+  background: #fff; /* Pure white for high contrast */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08);
   border: 2px solid #e0f0fb;
   padding: 20px 16px; /* More padding for better spacing */
   min-width: 320px;
@@ -109,9 +116,9 @@ section > div:hover {
   transform: translateY(-6px) scale(1.03); /* Slightly lift and scale card */
 }
 
-/* Card headings styled with Intel blue */
+/* Card headings styled with Intel blue and high contrast */
 section > div h2 {
-  color: #0071c5; /* Intel blue */
+  color: #003366; /* Dark blue for better contrast */
   margin: 0 0 4px 0;
   font-size: 1.4em;
   font-weight: bold;
@@ -119,10 +126,18 @@ section > div h2 {
 }
 
 section > div h3 {
-  color: #00a9e0; /* Lighter Intel blue */
+  color: #005fa3; /* Medium blue for contrast */
   margin: 0 0 10px 0;
   font-size: 1.1em;
   font-weight: normal;
+}
+
+/* Card body text */
+section > div,
+section > div ul,
+section > div li,
+section > div p {
+  color: #222; /* Very dark gray for readability */
 }
 
 /* Reduce space below the info text at the bottom of the timeline */
@@ -161,14 +176,62 @@ header p {
 
 /* Make the timeline scroll horizontally on large screens */
 section {
-  display: flex;
-  flex-direction: row; /* Horizontal layout */
-  overflow-x: auto;
-  gap: 24px;
+  display: flex;              /* Use flexbox for layout */
+  flex-direction: row;        /* Cards side-by-side */
+  overflow-x: auto;           /* Enable horizontal scrolling */
+  gap: 24px;                  /* Space between cards */
   padding: 24px 0;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory; /* Snap cards when scrolling */
   justify-content: flex-start;
   align-items: stretch;
+}
+
+/* Make carousel cards centered and spaced */
+.microprocessor-specs .carousel {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* Make sure carousel controls are visible */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #0071c5; /* Intel blue */
+  border-radius: 50%;
+}
+
+/* Center the microprocessor carousel and add spacing */
+.carousel-center {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+/* Add shadow and rounded corners to carousel */
+.carousel.shadow.rounded {
+  box-shadow: 0 4px 24px rgba(0,113,197,0.12);
+  border-radius: 18px;
+  background: #fff;
+  padding: 18px 0;
+  max-width: 380px;
+  width: 100%;
+}
+
+/* Center carousel content */
+.carousel-inner {
+  border-radius: 12px;
+}
+
+/* Add spacing and style to the microprocessor section description */
+.micro-desc {
+  text-align: center;
+  color: #005fa3;
+  font-size: 1.08em;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-style: italic;
 }
 
 /* Make timeline cards and images responsive for different devices */
@@ -200,12 +263,273 @@ section > div {
   height: 180px;
 }
 
-/* Responsive: Stack cards vertically and resize images/cards on small screens */
+/* Microprocessor Specifications Section */
+.microprocessor-specs {
+  background: #f4faff; /* Light Intel blue background */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08);
+  padding: 28px 10px;
+  margin: 32px auto 24px auto;
+  max-width: 1100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all content horizontally */
+}
+
+/* Title for the section - high contrast */
+.microprocessor-specs h2 {
+  color: #003366; /* Dark blue for high contrast */
+  font-size: 1.7em;
+  letter-spacing: 1px;
+  margin: 0 0 18px 0;
+  text-align: center;
+  text-shadow: 1px 2px 8px #fff; /* White shadow for readability */
+  background: none; /* No card background */
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Row for the three processor cards */
+.specs-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Individual processor card */
+.spec-card {
+  background: #fff; /* Pure white for high contrast */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.10);
+  border: 2px solid #e0f0fb;
+  padding: 18px 12px;
+  width: 260px;
+  margin-bottom: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #222; /* Dark text for contrast */
+}
+
+/* Processor card title */
+.spec-card h3 {
+  color: #005fa3; /* Medium blue for contrast */
+  font-size: 1.15em;
+  margin-bottom: 10px;
+}
+
+/* Processor image */
+.spec-img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #e0f0fb;
+}
+
+/* List of specifications */
+.spec-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: #222; /* Dark text for contrast */
+}
+
+.spec-card ul li {
+  margin-bottom: 6px;
+  color: #222; /* Dark text for contrast */
+}
+
+/* Style the subscription form container */
+.subscription-container {
+  background: #fff; /* Pure white for high contrast */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08);
+  padding: 40px 32px; /* Increased padding for a bigger box */
+  margin: 32px auto 24px auto;
+  max-width: 600px;    /* Increased max-width for a larger box */
+  text-align: center;
+  color: #222; /* Dark text for contrast */
+}
+
+/* Title for the subscription form */
+.subscription-container h4 {
+  color: #003366; /* Dark blue for contrast */
+  font-size: 1.3em;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Style for form labels */
+.subscription-container .form-label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: #003366; /* Dark blue for contrast */
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Style for input boxes */
+.subscription-container .form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #005fa3; /* Medium blue border for visibility */
+  font-size: 1em;
+  box-sizing: border-box;
+  color: #222; /* Dark text for contrast */
+  background: #f4faff; /* Light background for input */
+}
+
+/* Style for the checkbox area */
+.subscription-container .form-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 12px 0 16px 0;
+  text-align: left;
+  color: #222; /* Dark text for contrast */
+}
+
+.subscription-container .form-checkbox input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Blue Subscribe button with boost-button hover effect */
+.boost-button {
+  background-color: #0071c5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-top: 8px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.10);
+}
+
+/* Hover effect for boost-button */
+.boost-button:hover {
+  background-color: #005fa3;
+  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+  transform: scale(1.05);
+}
+
+/* Info Cards Section styles */
+.info-cards-section {
+  background: #f4faff;
+  border-radius: 16px; /* More rounded corners */
+  box-shadow: 0 4px 16px rgba(0,113,197,0.10); /* Softer shadow */
+  padding: 48px 10px;  /* More padding inside the section */
+  margin: 56px auto 56px auto; /* More space above and below */
+  max-width: 1200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 900px; /* Ensure section is wide enough for 3 cards side-by-side */
+}
+
+/* Title for the info cards section */
+.info-cards-section h2 {
+  color: #003366;
+  font-size: 2em;
+  letter-spacing: 1px;
+  margin: 0 0 32px 0; /* More space below the title */
+  text-align: center;
+  text-shadow: 1px 2px 8px #fff;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Show info cards side-by-side in a row on wide screens */
+.info-cards-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;    /* Make all cards the same height */
+  gap: 40px;               /* Space between cards */
+  flex-wrap: wrap;         /* Allow wrapping if not enough space */
+  width: 100%;
+}
+
+/* Individual info card - visually separated and interactive */
+.info-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.13);
+  border: 2px solid #e0f0fb;
+  padding: 32px 20px;
+  width: 300px;            /* Slightly smaller for desktop */
+  margin-bottom: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #222;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Hover effect for info cards */
+.info-card:hover {
+  box-shadow: 0 8px 32px rgba(0,113,197,0.18), 0 2px 12px rgba(0,113,197,0.10);
+  transform: translateY(-4px) scale(1.03);
+  border-color: #00a9e0;
+}
+
+.info-card h3 {
+  color: #0071c5;
+  font-size: 1.25em;
+  margin-bottom: 14px;
+}
+
+.info-card p {
+  color: #222;
+  font-size: 1.08em;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Add spacing above Learn More buttons in info cards */
+.learn-more-btn {
+  margin-top: 18px;
+}
+
+/* Responsive: stack cards vertically only on small screens */
+@media (max-width: 1200px) {
+  .info-cards-section {
+    min-width: 0;
+    max-width: 98vw;
+  }
+  .info-cards-row {
+    gap: 28px;
+  }
+  .info-card {
+    width: 90vw;
+    max-width: 340px;
+    padding: 24px 10px;
+  }
+}
+
+/* Responsive: stack timeline cards vertically on small screens */
 @media (max-width: 900px) {
-  .timeline-img-container,
-  .timeline-img {
-    height: 140px;
-    max-width: 100%;
+  section {
+    flex-direction: column;   /* Stack cards vertically */
+    gap: 18px;
+    overflow-x: visible;      /* No horizontal scroll */
+    align-items: center;
+    scroll-snap-type: none;   /* Disable snap */
   }
   section > div {
     min-width: 220px;
@@ -215,26 +539,12 @@ section > div {
 }
 
 @media (max-width: 700px) {
-  section {
-    flex-direction: column; /* Stack cards vertically */
-    gap: 16px;
-    overflow-x: visible; /* No horizontal scroll needed */
-    align-items: center;
-    scroll-snap-type: none; /* Disable scroll snap on small screens */
+  .info-cards-section {
+    padding: 14px 1vw;
   }
-  section > div {
-    min-width: 0;
-    max-width: 100%;
-    width: 96vw;
-    padding: 10px 2vw;
-  }
-  .timeline-img-container,
-  .timeline-img {
-    height: 110px;
-    max-width: 100%;
-  }
-  .timeline-tooltip {
-    font-size: 0.95em;
-    padding: 10px;
+  .info-card {
+    width: 98vw;
+    max-width: 340px;
+    padding: 18px 6px;
   }
 }
